@@ -3,13 +3,13 @@ import Runnable;
 public class Thread implements Runnable {
     // YOUR CODE HERE
 	Runnable passedRunnable;
-	
+    public Thread() {}	
     public Thread(Runnable passedRunnable) { 
-	passedRunnable.run(); }
+	this.passRunnable = passedRunnable;
+    }
     public void run() { }
     public final void start() {
-	// YOUR CODE HERE
-	    this.run();
+	passedRunnable.run();
     }
 	//new Thread(new ClassThatImplementsRunnable()).start();
 }
