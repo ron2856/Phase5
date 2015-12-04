@@ -1,0 +1,254 @@
+Creating execution for ThreadTest/main/()V
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  new Thread
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 1) --------------- 
+| &Thread{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 1 /  dup
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 2) --------------- 
+| &Thread{reference} &Thread{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 2 /  new MyRunnable
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 3) --------------- 
+| &Thread{reference} &Thread{reference} &MyRunnable{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 3 /  dup
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 4) --------------- 
+| &Thread{reference} &Thread{reference} &MyRunnable{reference} &MyRunnable{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 4 /  invokenonvirtual MyRunnable/<init> ()V
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 5 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 1 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  aload_0
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 5 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 1 - <init> (size = 1) --------------- 
+| &MyRunnable{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 1 /  invokenonvirtual Object/<init> ()V
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 2 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 2 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  return
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 5 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 1 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 2 /  return
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 3) --------------- 
+| &Thread{reference} &Thread{reference} &MyRunnable{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 5 /  invokenonvirtual Thread/<init> (LRunnable;)V
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 6 Param. cnt.: 1 Local cnt: 1
+| Activation@[0] = &Thread
+| Activation@[1] = &MyRunnable
+| Operand Stack 3 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  aload_0
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 6 Param. cnt.: 1 Local cnt: 1
+| Activation@[0] = &Thread
+| Activation@[1] = &MyRunnable
+| Operand Stack 3 - <init> (size = 1) --------------- 
+| &Thread{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 1 /  invokenonvirtual Object/<init> ()V
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 2 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &Thread
+| Operand Stack 4 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  return
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 6 Param. cnt.: 1 Local cnt: 1
+| Activation@[0] = &Thread
+| Activation@[1] = &MyRunnable
+| Operand Stack 3 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 2 /  aload_1
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 6 Param. cnt.: 1 Local cnt: 1
+| Activation@[0] = &Thread
+| Activation@[1] = &MyRunnable
+| Operand Stack 3 - <init> (size = 1) --------------- 
+| &MyRunnable{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 3 /  invokeinterface Runnable/run()V 1
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 4 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 5 - run (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  getstatic System out LIo;
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 4 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 5 - run (size = 1) --------------- 
+| null{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 1 /  pop
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 4 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 5 - run (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 2 /  ldc "Hello from a thread that was implemented using the Runnable Interface"
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 4 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 5 - run (size = 1) --------------- 
+| Hello from a thread that was implemented using the Runnable Interface{string} 
++----------------------------------------------------------------
+
+pc/next instruction: 3 /  invokestatic Io/println (Ljava/lang/String;)V
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 4 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &MyRunnable
+| Operand Stack 5 - run (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 4 /  return
++- Activation Record --------------------------------------------
+| Method: <init> Return addr.: 6 Param. cnt.: 1 Local cnt: 1
+| Activation@[0] = &Thread
+| Activation@[1] = &MyRunnable
+| Operand Stack 3 - <init> (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 4 /  return
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 1) --------------- 
+| &Thread{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 6 /  invokevirtual Thread/start ()V
++- Activation Record --------------------------------------------
+| Method: start Return addr.: 7 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &Thread
+| Operand Stack 6 - start (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  aload_0
++- Activation Record --------------------------------------------
+| Method: start Return addr.: 7 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &Thread
+| Operand Stack 6 - start (size = 1) --------------- 
+| &Thread{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 1 /  invokevirtual Thread/run ()V
++- Activation Record --------------------------------------------
+| Method: run Return addr.: 2 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &Thread
+| Operand Stack 7 - run (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 0 /  return
++- Activation Record --------------------------------------------
+| Method: start Return addr.: 7 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = &Thread
+| Operand Stack 6 - start (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 2 /  return
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 7 /  getstatic System out LIo;
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 1) --------------- 
+| null{reference} 
++----------------------------------------------------------------
+
+pc/next instruction: 8 /  pop
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 9 /  ldc "Hello from Main"
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 1) --------------- 
+| Hello from Main{string} 
++----------------------------------------------------------------
+
+pc/next instruction: 10 /  invokestatic Io/println (Ljava/lang/String;)V
++- Activation Record --------------------------------------------
+| Method: main Return addr.: -1 Param. cnt.: 0 Local cnt: 1
+| Activation@[0] = null
+| Operand Stack 0 - main (size = 0) --------------- 
+| 
++----------------------------------------------------------------
+
+pc/next instruction: 11 /  return
