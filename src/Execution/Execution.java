@@ -1093,6 +1093,23 @@ public class Execution {
 		    if (opCode == RuntimeConstants.opc_invokenonvirtual)
 			newMethod = cl.getNonvirtualMethod(methodName+"/"+mi.getSignature());
 		    else {
+		    	Activation.threadCounter.incrementThreadCounter();
+		    	final Execution e = new Execution("Thread", "start/()V", operandStack);
+		    	e.execute(trace);
+		    	Activation.threadCounter.decrementThreadCounter();
+		    	
+		    	try{
+		    		synchronized(Activation.threadCounter)
+		    		{
+		    			while (Activation.threadCounter.getThreadCount() > 0
+		    				Activation.threadCounter.wait();
+		    		}
+		    	} catch (java.lang.InterruptedException ie){
+		    		System.out.println("Waiting for thread counter to become 0 failed!");
+		    		System.exit(1);
+		    	}
+	
+		    	
 			Value va  = operandStack.peek(mi.getSignature().size()+1);
 			o = ((ReferenceValue)va).getValue();
 			cl = ClassList.getClass(o.className());
@@ -1129,7 +1146,7 @@ public class Execution {
             case RuntimeConstants.opc_lreturn: 
 		if (activation.getReturnAddress() == -1) {
 		    done = true;
-		    
+		    PrinterWriter(pw.close());
 		}
 		else if (currentMethod.getMethodName().equals("<clinit>")) {
 		    activationStack.pop();
